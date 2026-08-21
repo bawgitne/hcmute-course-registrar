@@ -25,6 +25,49 @@ const DEFAULT_SETTINGS = {
   userName: ''
 };
 
+// Helper to sanitize individual log for localStorage to avoid storing huge payloads
+const sanitizeLogForStorage = (log) => {
+  if (!log) return log;
+  let data = log.data;
+  if (typeof data === 'string' && data.length > 300) {
+    data = data.slice(0, 300) + '... [truncated]';
+  } else if (data && typeof data === 'object') {
+    try {
+      const str = JSON.stringify(data);
+      if (str.length > 300) {
+        data = { _summary: log.response || 'Payload truncated', _truncated: true };
+      }
+    } catch {
+      data = '[Circular/Unserializable]';
+    }
+  }
+  return { ...log, data };
+};
+
+const safeSaveLogsToStorage = (logsList) => {
+  if (!logsList) return;
+  try {
+    // Only store at most 50 recent logs in localStorage
+    let sanitized = logsList.slice(0, 50).map(sanitizeLogForStorage);
+
+    while (sanitized.length >= 0) {
+      try {
+        localStorage.setItem('hcmute_logs', JSON.stringify(sanitized));
+        return;
+      } catch (e) {
+        if (sanitized.length === 0) {
+          try { localStorage.removeItem('hcmute_logs'); } catch {}
+          return;
+        }
+        // If quota exceeded, shrink array length
+        sanitized = sanitized.slice(0, Math.floor(sanitized.length / 2));
+      }
+    }
+  } catch (e) {
+    console.warn('Failed to save logs to localStorage:', e);
+  }
+};
+
 export default function App() {
   const [settings, setSettings] = useState(() => {
     try {
@@ -59,19 +102,27 @@ export default function App() {
   const busyRef = useRef(false);
   const nextIndexRef = useRef(0);
 
-  // Save settings to localStorage
+  // Save settings to localStorage safely
   useEffect(() => {
-    localStorage.setItem('hcmute_settings', JSON.stringify(settings));
+    try {
+      localStorage.setItem('hcmute_settings', JSON.stringify(settings));
+    } catch (e) {
+      console.warn('Failed to save settings to localStorage:', e);
+    }
   }, [settings]);
 
-  // Save statuses to localStorage
+  // Save statuses to localStorage safely
   useEffect(() => {
-    localStorage.setItem('hcmute_statuses', JSON.stringify(statuses));
+    try {
+      localStorage.setItem('hcmute_statuses', JSON.stringify(statuses));
+    } catch (e) {
+      console.warn('Failed to save statuses to localStorage:', e);
+    }
   }, [statuses]);
 
-  // Save logs to localStorage
+  // Save logs to localStorage safely
   useEffect(() => {
-    localStorage.setItem('hcmute_logs', JSON.stringify(logs));
+    safeSaveLogsToStorage(logs);
   }, [logs]);
 
   const addLog = (code, step, result) => {
