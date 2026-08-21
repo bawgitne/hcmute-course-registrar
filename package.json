@@ -2,6 +2,7 @@
   "name": "hcmute-course-registrar",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "workspaces": [
     "web-app"
   ],
@@ -10,10 +11,11 @@
   },
   "scripts": {
     "build": "npm run build --workspace web-app",
-    "start": "serve -s web-app/dist -l ${PORT:-8080}"
+    "start": "node server.js"
   },
   "dependencies": {
-    "serve": "^14.2.5"
+    "express": "^4.21.2",
+    "http-proxy-middleware": "^3.0.3"
   },
   "overrides": {
     "lightningcss": "1.33.0"

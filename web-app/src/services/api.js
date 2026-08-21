@@ -1,5 +1,4 @@
-const isLocal = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
-const API_BASE = isLocal ? '/api/Regist' : 'https://dangkyapi.hcmute.edu.vn/api/Regist';
+const API_BASE = '/api/Regist';
 
 /**
  * Gửi HTTP Request trực tiếp tới API HCMUTE
