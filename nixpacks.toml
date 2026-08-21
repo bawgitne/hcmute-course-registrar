@@ -1,11 +1,11 @@
 [phases.setup]
-nixPkgs = ["nodejs_20"]
+nixPkgs = ["nodejs_22"]
 
 [phases.install]
-cmds = ["cd web-app && NPM_CONFIG_PRODUCTION=false npm install --include=optional --include=dev"]
+cmds = ["npm ci --include=dev"]
 
 [phases.build]
-cmds = ["cd web-app && NPM_CONFIG_PRODUCTION=false npm run build"]
+cmds = ["npm run build"]
 
 [start]
-cmd = "npx -y serve -s web-app/dist -l ${PORT:-8080}"
+cmd = "npm start"

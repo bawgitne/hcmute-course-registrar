@@ -2,8 +2,17 @@
   "name": "hcmute-course-registrar",
   "version": "1.0.0",
   "private": true,
+  "workspaces": [
+    "web-app"
+  ],
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
-    "build": "cd web-app && NPM_CONFIG_PRODUCTION=false npm install --include=optional --include=dev && npm run build",
-    "start": "npx -y serve -s web-app/dist -l ${PORT:-8080}"
+    "build": "npm run build --workspace web-app",
+    "start": "serve -s web-app/dist -l tcp://0.0.0.0:${PORT:-8080}"
+  },
+  "dependencies": {
+    "serve": "^14.2.5"
   }
 }
