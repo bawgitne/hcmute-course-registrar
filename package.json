@@ -14,5 +14,8 @@
   },
   "dependencies": {
     "serve": "^14.2.5"
+  },
+  "overrides": {
+    "lightningcss": "1.33.0"
   }
 }

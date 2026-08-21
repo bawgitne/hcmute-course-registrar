@@ -26,7 +26,11 @@
     "vite": "^8.2.0"
   },
   "optionalDependencies": {
-    "@rolldown/binding-linux-x64-gnu": "1.2.5",
-    "@rolldown/binding-wasm32-wasi": "1.2.5"
+    "@rolldown/binding-linux-x64-gnu": "^1.2.5",
+    "@rolldown/binding-wasm32-wasi": "^1.2.5",
+    "@tailwindcss/oxide-linux-x64-gnu": "^4.3.3",
+    "@tailwindcss/oxide-linux-x64-musl": "^4.3.3",
+    "lightningcss-linux-x64-gnu": "^1.33.0",
+    "lightningcss-linux-x64-musl": "^1.33.0"
   }
 }
