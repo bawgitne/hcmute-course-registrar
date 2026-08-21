@@ -2,10 +2,10 @@
 nixPkgs = ["nodejs_20"]
 
 [phases.install]
-cmds = ["npm --prefix web-app install"]
+cmds = ["cd web-app && NPM_CONFIG_PRODUCTION=false npm install --include=dev"]
 
 [phases.build]
-cmds = ["npm --prefix web-app run build"]
+cmds = ["cd web-app && npm run build"]
 
 [start]
 cmd = "npx -y serve -s web-app/dist -l ${PORT:-8080}"
