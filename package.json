@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build": "npm run build --workspace web-app",
-    "start": "serve -s web-app/dist -l tcp://0.0.0.0:${PORT:-8080}"
+    "start": "serve -s web-app/dist -l ${PORT:-8080}"
   },
   "dependencies": {
     "serve": "^14.2.5"
