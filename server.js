@@ -2,12 +2,31 @@ import express from 'express';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { startJob, stopJob, getJobStatus } from './botEngine.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 8080;
+
+app.use(express.json());
+
+// Background Bot Engine Routes
+app.post('/api/bot/start', (req, res) => {
+  const result = startJob(req.body || {});
+  res.json({ ok: true, data: result });
+});
+
+app.post('/api/bot/stop', (req, res) => {
+  const result = stopJob(req.body || {});
+  res.json({ ok: true, data: result });
+});
+
+app.post('/api/bot/status', (req, res) => {
+  const result = getJobStatus(req.body || {});
+  res.json({ ok: true, data: result });
+});
 
 // Reverse Proxy for HCMUTE API to bypass CORS in production
 app.use(

@@ -341,38 +341,107 @@ export default function App() {
     }
   };
 
-  // Timer loop effect
-  useEffect(() => {
-    if (!isRunning) {
-      if (timerRef.current) clearTimeout(timerRef.current);
+  const handleStartBot = async () => {
+    if (!settings.token || !settings.courses.length) {
+      alert('Vui lòng dán Session Token và nhập ít nhất 1 mã môn/lớp trước khi chạy!');
       return;
     }
+    try {
+      const res = await fetch('/api/bot/start', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(settings)
+      });
+      const data = await res.json();
+      if (data.ok) {
+        setIsRunning(true);
+      }
+    } catch (e) {
+      alert('Không thể khởi chạy Bot ngầm trên Server: ' + e.message);
+    }
+  };
 
-    const loop = async () => {
-      await runCycle();
-      timerRef.current = setTimeout(loop, Math.max(3, settings.intervalSeconds || 5) * 1000);
+  const handleStopBot = async () => {
+    try {
+      const res = await fetch('/api/bot/stop', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(settings)
+      });
+      const data = await res.json();
+      if (data.ok) {
+        setIsRunning(false);
+      }
+    } catch (e) {
+      setIsRunning(false);
+    }
+  };
+
+  // Sync background bot status with server
+  useEffect(() => {
+    let timer = null;
+
+    const pollStatus = async () => {
+      if (!settings.token) return;
+      try {
+        const res = await fetch('/api/bot/status', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify(settings)
+        });
+        const json = await res.json();
+        if (json.ok && json.data) {
+          const snapshot = json.data;
+          setIsRunning(snapshot.isRunning);
+
+          if (snapshot.statuses && Object.keys(snapshot.statuses).length > 0) {
+            setStatuses((prev) => ({ ...prev, ...snapshot.statuses }));
+          }
+
+          if (snapshot.logs && snapshot.logs.length > 0) {
+            setLogs((prev) => {
+              const combined = [...snapshot.logs, ...prev];
+              const unique = [];
+              const seen = new Set();
+              for (const item of combined) {
+                const id = `${item.time}:${item.code}:${item.step}`;
+                if (!seen.has(id)) {
+                  seen.add(id);
+                  unique.push(item);
+                }
+              }
+              return unique.slice(0, 200);
+            });
+          }
+
+          if (snapshot.successCodes && snapshot.successCodes.length > 0) {
+            setSuccessCodes(snapshot.successCodes);
+          }
+
+          if (snapshot.statusState === 'expired') {
+            setIsRunning(false);
+          }
+        }
+      } catch (e) {
+        // Silent fallback
+      }
     };
 
-    loop();
+    pollStatus();
+    timer = setInterval(pollStatus, 2500);
 
     return () => {
-      if (timerRef.current) clearTimeout(timerRef.current);
+      if (timer) clearInterval(timer);
     };
-  }, [isRunning, settings, successCodes]);
+  }, [settings]);
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans antialiased selection:bg-blue-600 selection:text-white">
       {/* Top Header Bar */}
       <Header
         isRunning={isRunning}
-        onStart={() => {
-          if (!settings.token || !settings.courses.length) {
-            alert('Vui lòng dán Session Token và nhập ít nhất 1 mã môn/lớp trước khi chạy!');
-            return;
-          }
-          setIsRunning(true);
-        }}
-        onStop={() => setIsRunning(false)}
+        onStart={handleStartBot}
+        onStop={handleStopBot}
         onOpenImport={() => setIsImportOpen(true)}
         hasToken={Boolean(settings.token)}
         userId={settings.userId}
