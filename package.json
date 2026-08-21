@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "cd web-app && npm install --include=optional --include=dev && npm run build",
+    "build": "cd web-app && NPM_CONFIG_PRODUCTION=false npm install --include=optional --include=dev && npm run build",
     "start": "npx -y serve -s web-app/dist -l ${PORT:-8080}"
   }
 }
