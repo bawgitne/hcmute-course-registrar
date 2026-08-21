@@ -1,0 +1,160 @@
+curl --url 'https://dangkyapi.hcmute.edu.vn/api/Regist/GetAllClassAllowRegist' \
+  -H 'accept: application/json, text/plain, */*' \
+  -H 'accept-language: en-US,en;q=0.9' \
+  -H 'apikey: pscRBF0zT2Mqo6vMw69YMOH43IrB2RtXBS0EHit2kzv' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjI0MTEwMTY2IiwiTmFtZSI6Ik5nw7QgQW5oIELhurFuZyIsIlJvbGUiOiJTViIsIlN0dWR5UHJvZ3JhbUlkcyI6IjI0MTEwIiwibmJmIjoxNzg3MTA1OTk4LCJleHAiOjE3ODcxMTMxOTgsImlhdCI6MTc4NzEwNTk5OCwiaXNzIjoiUFNDVUlTQXBpIiwiYXVkIjoiaGNtdXRlIn0.d9JbhtO3j-4y5zgYP9OXzzbcHqVp5l63ZYZDVJJYURg' \
+  -H 'clientid: dtl' \
+  -H 'content-type: application/json' \
+  -H 'dnt: 1' \
+  -H 'origin: https://dkmh.hcmute.edu.vn' \
+  -H 'priority: u=1, i' \
+  -H 'referer: https://dkmh.hcmute.edu.vn/' \
+  -H 'sec-ch-ua: "Not=A?Brand";v="99", "Microsoft Edge";v="151", "Chromium";v="151"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-site' \
+  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0' \
+  --data-raw '{"ReqParam1":"24110","ReqParam2":"NKH","ReqParam3":"2026-2027","ReqParam4":"HK01","ReqParam5":""}' ;
+curl --url 'https://dangkyapi.hcmute.edu.vn/api/Regist/GetAllClassAllowRegist' \
+  -X 'OPTIONS' \
+  -H 'accept: */*' \
+  -H 'accept-language: en-US,en;q=0.9' \
+  -H 'access-control-request-headers: apikey,authorization,clientid,content-type' \
+  -H 'access-control-request-method: POST' \
+  -H 'origin: https://dkmh.hcmute.edu.vn' \
+  -H 'priority: u=1, i' \
+  -H 'referer: https://dkmh.hcmute.edu.vn/' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-site' \
+  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0' ;
+curl --url 'https://dangkyapi.hcmute.edu.vn/api/Regist/GetAllScheduleUnitAllowRegist' \
+  -X 'OPTIONS' \
+  -H 'accept: */*' \
+  -H 'accept-language: en-US,en;q=0.9' \
+  -H 'access-control-request-headers: apikey,authorization,clientid,content-type' \
+  -H 'access-control-request-method: POST' \
+  -H 'origin: https://dkmh.hcmute.edu.vn' \
+  -H 'priority: u=1, i' \
+  -H 'referer: https://dkmh.hcmute.edu.vn/' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-site' \
+  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0' ;
+curl --url 'https://dangkyapi.hcmute.edu.vn/api/Regist/GetAllScheduleUnitAllowRegist' \
+  -H 'accept: application/json, text/plain, */*' \
+  -H 'accept-language: en-US,en;q=0.9' \
+  -H 'apikey: pscRBF0zT2Mqo6vMw69YMOH43IrB2RtXBS0EHit2kzv' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjI0MTEwMTY2IiwiTmFtZSI6Ik5nw7QgQW5oIELhurFuZyIsIlJvbGUiOiJTViIsIlN0dWR5UHJvZ3JhbUlkcyI6IjI0MTEwIiwibmJmIjoxNzg3MTA1OTk4LCJleHAiOjE3ODcxMTMxOTgsImlhdCI6MTc4NzEwNTk5OCwiaXNzIjoiUFNDVUlTQXBpIiwiYXVkIjoiaGNtdXRlIn0.d9JbhtO3j-4y5zgYP9OXzzbcHqVp5l63ZYZDVJJYURg' \
+  -H 'clientid: dtl' \
+  -H 'content-type: application/json' \
+  -H 'dnt: 1' \
+  -H 'origin: https://dkmh.hcmute.edu.vn' \
+  -H 'priority: u=1, i' \
+  -H 'referer: https://dkmh.hcmute.edu.vn/' \
+  -H 'sec-ch-ua: "Not=A?Brand";v="99", "Microsoft Edge";v="151", "Chromium";v="151"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-site' \
+  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0' \
+  --data-raw '{"ReqParam1":"24110","ReqParam2":"NKH","ReqParam3":"261SYTH220491"}' ;
+curl --url 'https://dangkyapi.hcmute.edu.vn/api/Regist/CheckExitsRegist?StudyProgramID=24110' \
+  -H 'accept: application/json, text/plain, */*' \
+  -H 'accept-language: en-US,en;q=0.9' \
+  -H 'apikey: pscRBF0zT2Mqo6vMw69YMOH43IrB2RtXBS0EHit2kzv' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjI0MTEwMTY2IiwiTmFtZSI6Ik5nw7QgQW5oIELhurFuZyIsIlJvbGUiOiJTViIsIlN0dWR5UHJvZ3JhbUlkcyI6IjI0MTEwIiwibmJmIjoxNzg3MTA1OTk4LCJleHAiOjE3ODcxMTMxOTgsImlhdCI6MTc4NzEwNTk5OCwiaXNzIjoiUFNDVUlTQXBpIiwiYXVkIjoiaGNtdXRlIn0.d9JbhtO3j-4y5zgYP9OXzzbcHqVp5l63ZYZDVJJYURg' \
+  -H 'clientid: dtl' \
+  -H 'content-type: application/json' \
+  -H 'dnt: 1' \
+  -H 'origin: https://dkmh.hcmute.edu.vn' \
+  -H 'priority: u=1, i' \
+  -H 'referer: https://dkmh.hcmute.edu.vn/' \
+  -H 'sec-ch-ua: "Not=A?Brand";v="99", "Microsoft Edge";v="151", "Chromium";v="151"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-site' \
+  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0' \
+  --data-raw '[{"CurriculumID":"261SYTH220491_01","ScheduleStudyUnitAlias":"SYTH220491_01","CurriculumName":"Tư duy hệ thống","StudyUnitID":"261SYTH220491","TypeName":"Lý thuyết","Credits":0,"StudentQuotas":"10-75","StudyUnitTypeID":1,"MaxStudentNumber":75,"NumberOfStudents":72,"Schedules":" Thứ 5,tiết 1-2,tuần 8-8,A4-303<br/>Thứ 5,tiết 1-4,tuần 1-7,A4-303<br/>,Đợt 1","ProfessorName":" Nguyễn Minh Khánh","IsRegisted":false,"ListOfClassStudentID":"24951, 25145CTNA, 25145CTNB","NumberOfChilds":0,"FeeDebt":"","ParentID":"","UpdateDate":"08/19/2026 11:11:51","NumberRegistOfEmpty":"3","IsHocTrucTuyen":"","isOpen":true,"isOpenChilrentTask":false}]' ;
+curl --url 'https://dangkyapi.hcmute.edu.vn/api/Regist/CheckExitsRegist?StudyProgramID=24110' \
+  -X 'OPTIONS' \
+  -H 'accept: */*' \
+  -H 'accept-language: en-US,en;q=0.9' \
+  -H 'access-control-request-headers: apikey,authorization,clientid,content-type' \
+  -H 'access-control-request-method: POST' \
+  -H 'origin: https://dkmh.hcmute.edu.vn' \
+  -H 'priority: u=1, i' \
+  -H 'referer: https://dkmh.hcmute.edu.vn/' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-site' \
+  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0' ;
+curl --url 'https://dangkyapi.hcmute.edu.vn/api/Regist/RegistScheduleStudyUnit?TurnID=81&Action=REGIST&StudyProgramID=24110' \
+  -H 'accept: application/json, text/plain, */*' \
+  -H 'accept-language: en-US,en;q=0.9' \
+  -H 'apikey: pscRBF0zT2Mqo6vMw69YMOH43IrB2RtXBS0EHit2kzv' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjI0MTEwMTY2IiwiTmFtZSI6Ik5nw7QgQW5oIELhurFuZyIsIlJvbGUiOiJTViIsIlN0dWR5UHJvZ3JhbUlkcyI6IjI0MTEwIiwibmJmIjoxNzg3MTA1OTk4LCJleHAiOjE3ODcxMTMxOTgsImlhdCI6MTc4NzEwNTk5OCwiaXNzIjoiUFNDVUlTQXBpIiwiYXVkIjoiaGNtdXRlIn0.d9JbhtO3j-4y5zgYP9OXzzbcHqVp5l63ZYZDVJJYURg' \
+  -H 'clientid: dtl' \
+  -H 'content-type: application/json' \
+  -H 'dnt: 1' \
+  -H 'origin: https://dkmh.hcmute.edu.vn' \
+  -H 'priority: u=1, i' \
+  -H 'referer: https://dkmh.hcmute.edu.vn/' \
+  -H 'sec-ch-ua: "Not=A?Brand";v="99", "Microsoft Edge";v="151", "Chromium";v="151"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-site' \
+  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0' \
+  --data-raw '[{"CurriculumID":"261SYTH220491_01","ScheduleStudyUnitAlias":"SYTH220491_01","CurriculumName":"Tư duy hệ thống","StudyUnitID":"261SYTH220491","TypeName":"Lý thuyết","Credits":0,"StudentQuotas":"10-75","StudyUnitTypeID":1,"MaxStudentNumber":75,"NumberOfStudents":72,"Schedules":" Thứ 5,tiết 1-2,tuần 8-8,A4-303<br/>Thứ 5,tiết 1-4,tuần 1-7,A4-303<br/>,Đợt 1","ProfessorName":" Nguyễn Minh Khánh","IsRegisted":false,"ListOfClassStudentID":"24951, 25145CTNA, 25145CTNB","NumberOfChilds":0,"FeeDebt":"","ParentID":"","UpdateDate":"08/19/2026 11:11:51","NumberRegistOfEmpty":"3","IsHocTrucTuyen":"","isOpen":true,"isOpenChilrentTask":false}]' ;
+curl --url 'https://dangkyapi.hcmute.edu.vn/api/Regist/RegistScheduleStudyUnit?TurnID=81&Action=REGIST&StudyProgramID=24110' \
+  -X 'OPTIONS' \
+  -H 'accept: */*' \
+  -H 'accept-language: en-US,en;q=0.9' \
+  -H 'access-control-request-headers: apikey,authorization,clientid,content-type' \
+  -H 'access-control-request-method: POST' \
+  -H 'origin: https://dkmh.hcmute.edu.vn' \
+  -H 'priority: u=1, i' \
+  -H 'referer: https://dkmh.hcmute.edu.vn/' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-site' \
+  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0' ;
+curl --url 'https://dangkyapi.hcmute.edu.vn/api/Regist/GetAllClassRegisted' \
+  -H 'accept: application/json, text/plain, */*' \
+  -H 'accept-language: en-US,en;q=0.9' \
+  -H 'apikey: pscRBF0zT2Mqo6vMw69YMOH43IrB2RtXBS0EHit2kzv' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjI0MTEwMTY2IiwiTmFtZSI6Ik5nw7QgQW5oIELhurFuZyIsIlJvbGUiOiJTViIsIlN0dWR5UHJvZ3JhbUlkcyI6IjI0MTEwIiwibmJmIjoxNzg3MTA1OTk4LCJleHAiOjE3ODcxMTMxOTgsImlhdCI6MTc4NzEwNTk5OCwiaXNzIjoiUFNDVUlTQXBpIiwiYXVkIjoiaGNtdXRlIn0.d9JbhtO3j-4y5zgYP9OXzzbcHqVp5l63ZYZDVJJYURg' \
+  -H 'clientid: dtl' \
+  -H 'content-type: application/json' \
+  -H 'dnt: 1' \
+  -H 'origin: https://dkmh.hcmute.edu.vn' \
+  -H 'priority: u=1, i' \
+  -H 'referer: https://dkmh.hcmute.edu.vn/' \
+  -H 'sec-ch-ua: "Not=A?Brand";v="99", "Microsoft Edge";v="151", "Chromium";v="151"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-site' \
+  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0' \
+  --data-raw '{"ReqParam1":"0","ReqParam2":"81"}' ;
+curl --url 'https://dangkyapi.hcmute.edu.vn/api/Regist/GetAllClassRegisted' \
+  -X 'OPTIONS' \
+  -H 'accept: */*' \
+  -H 'accept-language: en-US,en;q=0.9' \
+  -H 'access-control-request-headers: apikey,authorization,clientid,content-type' \
+  -H 'access-control-request-method: POST' \
+  -H 'origin: https://dkmh.hcmute.edu.vn' \
+  -H 'priority: u=1, i' \
+  -H 'referer: https://dkmh.hcmute.edu.vn/' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-site' \
+  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0'

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Course Registration Monitor</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="auth-status.css">
+  <link rel="stylesheet" href="registered-courses.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div><span class="eyebrow">HCMUTE · API MONITOR</span><h1>Đăng ký lớp học phần</h1></div>
+      <div id="runBadge" class="badge idle"><span></span>Đang dừng</div>
+    </header>
+
+    <section class="grid">
+      <form id="settingsForm" class="panel config">
+        <div class="panel-title"><div><span class="step">01</span><h2>Phiên & quy tắc</h2></div><button type="button" id="readAuth" class="ghost">Đồng bộ lại</button></div>
+        <input id="token" type="hidden">
+        <input id="turnId" type="hidden">
+        <div id="authStatus" class="auth-status"><span></span><div><strong>Đang kiểm tra phiên đăng nhập</strong><small>Mở và đăng nhập cổng đăng ký để extension tự đồng bộ.</small></div></div>
+        <div class="fields three">
+          <label>StudyProgramID<input id="studyProgramId" placeholder="24110" required></label>
+          <label>Chu kỳ (giây)<input id="intervalSeconds" type="number" min="5" value="5" required></label>
+        </div>
+        <details>
+          <summary>Cấu hình API nâng cao</summary>
+          <div class="fields three details-body">
+            <label>Action<select id="action"><option>CHANGE</option><option>ADD</option></select></label>
+            <label>Client ID<input id="clientId" placeholder="Tự lấy từ request của cổng"></label>
+            <label>API key<input id="apiKey"></label>
+            <label>Năm học<input id="year" placeholder="2026-2027" value="2026-2027"></label>
+            <label>Học kỳ<input id="semester" placeholder="HK01" value="HK01"></label>
+          </div>
+        </details>
+
+        <div class="divider"></div>
+        <div class="panel-title"><div><span class="step">02</span><h2>Mã môn / lớp học phần</h2></div><span id="courseCount" class="counter">0 môn/lớp</span></div>
+        <p class="hint">Nhập mã môn (ví dụ <code>DBMS330284</code>) hoặc mã lớp. Extension sẽ gọi API theo dõi sỉ số môn mỗi 5s và tự động đăng ký ngay khi có lớp được chọn trống chỗ.</p>
+        <textarea id="courses" rows="7" placeholder="DBMS330284&#10;SOEN330679&#10;261WEPR330479_01"></textarea>
+        <div class="actions">
+          <button type="submit" class="secondary">Lưu cấu hình</button>
+          <button type="button" id="start" class="primary">Bắt đầu chạy</button>
+          <button type="button" id="stop" class="danger" disabled>Dừng</button>
+        </div>
+        <p id="formMessage" class="message"></p>
+      </form>
+
+      <section class="panel status-panel">
+        <div class="panel-title"><div><span class="step">03</span><h2>Chọn môn & lớp học phần</h2></div></div>
+        <div class="course-actions-bar">
+          <button type="button" id="loadRegistered" class="ghost">Môn đã đăng ký</button>
+          <button type="button" id="loadAllowRegistKH" class="ghost">Môn theo KH (chưa đăng ký)</button>
+          <button type="button" id="loadAllowRegistNKH" class="ghost">Môn ngoài KH</button>
+        </div>
+        <div id="registeredCourses" class="course-list"><div class="empty">Bấm một trong các nút ở trên để tải danh sách môn từ cổng.</div></div>
+        <div class="divider"></div>
+        <div class="panel-title"><div><span class="step">04</span><h2>Hàng đợi thay đổi / đăng ký</h2></div><button id="runOnce" class="ghost">Chạy 1 lượt</button></div>
+        <div id="courseStatuses" class="course-list"><div class="empty">Chưa có mã lớp nào.</div></div>
+      </section>
+    </section>
+
+    <section class="panel log-panel">
+      <div class="panel-title"><div><span class="step">05</span><h2>Nhật ký API</h2></div><button id="clearLogs" class="ghost">Xóa nhật ký</button></div>
+      <div class="log-head"><span>Thời gian</span><span>Mã lớp</span><span>Bước</span><span>Kết quả</span><span>Phản hồi</span></div>
+      <div id="logs" class="logs"><div class="empty">Chưa có yêu cầu nào được gửi.</div></div>
+    </section>
+  </main>
+  <script src="dashboard.js"></script>
+</body>
+</html>

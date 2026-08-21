@@ -1,0 +1,21 @@
+.auth-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: #fafaf7;
+  padding: 13px 14px;
+  margin-bottom: 14px;
+}
+.auth-status > span { width: 10px; height: 10px; border-radius: 50%; background: #9aa39f; flex: 0 0 auto; }
+.auth-status div { display: flex; flex-direction: column; gap: 3px; }
+.auth-status strong { font-size: 13px; }
+.auth-status small { font-size: 11px; color: var(--muted); }
+.auth-status.ready { border-color: #a8cdbb; background: var(--green2); }
+.auth-status.ready > span { background: #19a66d; }
+.auth-status.connecting { border-color: #f7d070; background: #fffdf5; }
+.auth-status.connecting > span { background: #e09f19; }
+.auth-status.error { border-color: #e1b5ae; background: var(--red2); }
+.auth-status.error > span { background: var(--red); }
+

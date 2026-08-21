@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "HCMUTE Course Registration Monitor",
+  "version": "1.0.0",
+  "description": "Theo dõi và thử đăng ký nhiều lớp học phần theo chu kỳ do người dùng cấu hình.",
+  "permissions": ["storage", "tabs", "webRequest"],
+  "host_permissions": [
+    "https://dangkyapi.hcmute.edu.vn/*",
+    "https://dkmh.hcmute.edu.vn/*",
+    "https://accounts.google.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Mở bảng đăng ký",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://dkmh.hcmute.edu.vn/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://accounts.google.com/*"],
+      "js": ["google_auto_select.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
+}
+
