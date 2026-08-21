@@ -2,7 +2,7 @@
 nixPkgs = ["nodejs_20"]
 
 [phases.install]
-cmds = ["cd web-app && NPM_CONFIG_PRODUCTION=false npm install --include=dev"]
+cmds = ["cd web-app && npm install --include=optional --include=dev"]
 
 [phases.build]
 cmds = ["cd web-app && npm run build"]
