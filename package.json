@@ -1,0 +1,9 @@
+{
+  "name": "hcmute-course-registrar",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "npm --prefix web-app install && npm --prefix web-app run build",
+    "start": "npx -y serve -s web-app/dist -l ${PORT:-8080}"
+  }
+}
