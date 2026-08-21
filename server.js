@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 8080;
 app.use(
   '/api',
   createProxyMiddleware({
-    target: 'https://dangkyapi.hcmute.edu.vn',
+    target: 'https://dangkyapi.hcmute.edu.vn/api',
     changeOrigin: true,
     secure: false,
     on: {
